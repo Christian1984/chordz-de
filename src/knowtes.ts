@@ -62,6 +62,53 @@ export class Knowtes {
         }
     }
 
+    toggleNote(name: string) {
+        switch (name) {
+            case "c":
+                this.activeKeys.c = !this.activeKeys.c;
+                break;
+            case "d":
+                this.activeKeys.d = !this.activeKeys.d;
+                break;
+            case "e":
+                this.activeKeys.e = !this.activeKeys.e;
+                break;
+            case "f":
+                this.activeKeys.f = !this.activeKeys.f;
+                break;
+            case "g":
+                this.activeKeys.g = !this.activeKeys.g;
+                break;
+            case "a":
+                this.activeKeys.a = !this.activeKeys.a;
+                break;
+            case "b":
+                this.activeKeys.b = !this.activeKeys.b;
+                break;
+            case "c2":
+                this.activeKeys.c2 = !this.activeKeys.c2;
+                break;
+            case "cis":
+                this.activeKeys.cis = !this.activeKeys.cis;
+                break;
+            case "dis":
+                this.activeKeys.dis = !this.activeKeys.dis;
+                break;
+            case "fis":
+                this.activeKeys.fis = !this.activeKeys.fis;
+                break;
+            case "gis":
+                this.activeKeys.gis = !this.activeKeys.gis;
+                break;
+            case "ais":
+                this.activeKeys.ais = !this.activeKeys.ais;
+                break;
+            default:
+                console.warn("toggleNote called with illegal name.")
+            ;
+        }
+    }
+
     getNote(name: string): boolean {
         switch (name) {
             case "c":
