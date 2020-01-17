@@ -18,13 +18,22 @@ ul, ol {
     list-style: none;
 }
 
+.main-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 #main {
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 
-    div {
+    > div {
         flex-grow: 1;
-        
     }
 }
