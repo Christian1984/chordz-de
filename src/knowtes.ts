@@ -1,4 +1,4 @@
-import { IKnowtesView } from "./iKnowtesView";
+import { IKnowtesView } from "./IKnowtesView";
 
 export class Knowtes {
     activeKeys = {

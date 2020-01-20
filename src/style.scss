@@ -38,6 +38,10 @@ ul, ol {
     }
 }
 
+.button {
+    cursor: pointer;
+}
+
 #name-buttons {
     display: flex;
     flex-direction: column;
@@ -54,8 +58,6 @@ ul, ol {
 
         text-align: center;
         line-height: 2rem;
-
-        cursor: pointer;
 
         &:hover {
             background-color: lightgrey;

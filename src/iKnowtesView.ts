@@ -1,4 +1,4 @@
-import { Knowtes } from "./knowtes";
+import { Knowtes } from "./Knowtes";
 
 export interface IKnowtesView {
     update(model: Knowtes): void;

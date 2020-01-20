@@ -1,12 +1,12 @@
-import { Knowtes } from "./knowtes";
-import { IKnowtesView } from "./iKnowtesView";
+import { Knowtes } from "./Knowtes";
+import { IKnowtesView } from "./IKnowtesView";
 
 export class KnowtesViewController implements IKnowtesView {
     model: Knowtes | null = null;
-    buttons: NodeListOf<HTMLLIElement> | null;
+    buttons: NodeListOf<HTMLElement> | null;
 
-    constructor(keyPadParent: HTMLElement) {
-        this.buttons = keyPadParent.querySelectorAll("li");
+    constructor(buttonsParent: HTMLElement, selector: string) {
+        this.buttons = buttonsParent.querySelectorAll(selector);
         
         for (const button of this.buttons) {
             button.addEventListener("click", (e) => {
@@ -23,6 +23,8 @@ export class KnowtesViewController implements IKnowtesView {
 
     update(model: Knowtes): void {
         if (!this.buttons) return;
+
+        console.log("update!");
         for (let button of this.buttons) {
             if (button.dataset.name) {
                 if (model.getNote(button.dataset.name)) {
