@@ -67,3 +67,38 @@ ul, ol {
         }
     }
 }
+
+#notes {
+    > div {
+        display: grid;
+
+        > div {
+            font-size: 0;
+        }
+
+        > .notes-line {
+            border-bottom: 2px solid black;
+        }
+    }
+}
+
+#keyboard {
+    > ul {
+        display: grid;
+        
+        > li {
+            font-size: 0;
+            border: 2px solid black;
+
+            &.keys-white {
+                background-color: white;
+                z-index: 10;
+            }
+
+            &.keys-black {
+                background-color: black;
+                z-index: 100;
+            }
+        }
+    }
+}
