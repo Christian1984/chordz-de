@@ -153,6 +153,7 @@ ul, ol {
             border: 2px solid black;
 
             &.keys-white {
+                border-width: 2px 1px;
                 background-color: white;
                 z-index: 10;
             }
@@ -164,6 +165,7 @@ ul, ol {
             }
 
             &#key-c {
+                border-left-width: 2px;
                 grid-column: 1 / 4;
             }
 
@@ -192,6 +194,7 @@ ul, ol {
             }
 
             &#key-c2 {
+                border-right-width: 2px;
                 grid-column: 22 / 25;
             }
 
