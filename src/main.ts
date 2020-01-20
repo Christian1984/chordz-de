@@ -1,5 +1,5 @@
 import { Knowtes } from './knowtes.js';
-import { KnowtesController } from './knowtesController.js';
+import { KnowtesViewController } from './knowtesViewController.js';
 
 (function() {
     let knowtes = new Knowtes();
@@ -7,10 +7,10 @@ import { KnowtesController } from './knowtesController.js';
     let keyPad: HTMLElement | null = document.querySelector("#name-buttons");
 
     if (keyPad) {
-        let buttonController = new KnowtesController(keyPad);
-        buttonController.setModel(knowtes);
+        let buttonViewController = new KnowtesViewController(keyPad);
+        buttonViewController.setModel(knowtes);
+        knowtes.addView(buttonViewController);
     }
-
 
     console.log("done!");
 })();

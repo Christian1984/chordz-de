@@ -1,3 +1,5 @@
+import { IKnowtesView } from "./iKnowtesView";
+
 export class Knowtes {
     activeKeys = {
         c: false,
@@ -14,6 +16,8 @@ export class Knowtes {
         gis: false,
         ais: false
     };
+
+    views: IKnowtesView[] = [];
 
     setNote(name: string, active: boolean) {
         switch (name) {
@@ -57,9 +61,11 @@ export class Knowtes {
                 this.activeKeys.ais = active;
                 break;
             default:
-                console.warn("setNote called with illegal name.")
-            ;
+                console.warn("setNote called with illegal name.");
+                return;
         }
+
+        this.updateViews();
     }
 
     toggleNote(name: string) {
@@ -104,9 +110,11 @@ export class Knowtes {
                 this.activeKeys.ais = !this.activeKeys.ais;
                 break;
             default:
-                console.warn("toggleNote called with illegal name.")
-            ;
+                console.warn("toggleNote called with illegal name.");
+                return;
         }
+
+        this.updateViews();
     }
 
     getNote(name: string): boolean {
@@ -142,5 +150,15 @@ export class Knowtes {
         }
 
         return false;
+    }
+
+    addView(view: IKnowtesView) {
+        this.views.push(view);
+    }
+
+    private updateViews(): void {
+        for (let view of this.views) {
+            view.update(this);
+        }
     }
 }
