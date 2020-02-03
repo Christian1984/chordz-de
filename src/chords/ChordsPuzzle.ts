@@ -6,6 +6,8 @@ export class ChordsPuzzle {
     private leftHand: boolean;
     private seconds: number;
 
+    private intervalId: number = 0;
+
     constructor() {
         this.chord = this.randomEnum(Chord);
         this.reversal = Math.floor(Math.random() * 3); //generates 0, 1 or 2
@@ -29,12 +31,19 @@ export class ChordsPuzzle {
         return this.seconds;
     }
 
-    private startClock(): void {
-        //TODO
+    public startClock(): void {
+        this.intervalId = setInterval(() => this.tickClock(), 1000);
+        console.log(this.intervalId);
     }
 
-    private stopClock(): void {
-        //TODO
+    public stopClock(): void {
+        clearInterval(this.intervalId);
+    }
+
+    private tickClock() {
+        this.seconds++;
+        console.log(this.seconds);
+        //TODO: notify views
     }
 
     private randomEnum<T>(anEnum: T): T[keyof T] {

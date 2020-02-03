@@ -11,7 +11,7 @@ export class ChordsGame {
     private views: IChordsView[] = [];
 
     constructor() {
-        this.generatePuzzle();
+        this.nextPuzzle();
     }
 
     public addView(view: IChordsView) {
@@ -23,8 +23,15 @@ export class ChordsGame {
         return this.puzzle;
     }
 
-    private generatePuzzle() {
+    public solvePuzzle() {
+        if (this.puzzle) {
+            this.puzzle.stopClock();
+        }
+    }
+
+    public nextPuzzle() {
         this.puzzle = new ChordsPuzzle();
+        this.puzzle.startClock();
         this.updateViews();
     }
 
