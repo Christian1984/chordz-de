@@ -1,0 +1,1 @@
+export enum Chord { C, F, G };
