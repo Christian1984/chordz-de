@@ -25,17 +25,18 @@ export class ChordsView implements IChordsView {
 
         if (puzzle)
         {
-            console.log(
-                "Chord:", puzzle.getChord(),
-                ", Reversal:", puzzle.getReversal(),
-                ", LeftHand;", puzzle.getLeftHand(),
-                ", Seconds;", puzzle.getSeconds()
-            );
-
             this.chordDisplay.textContent = this.chordToString(puzzle.getChord());
             this.reversalDisplay.textContent = this.reversalToString(puzzle.getReversal());
             this.handDisplay.textContent = this.handToString(puzzle.getLeftHand());
             this.timerDisplay.textContent = this.secondsToString(puzzle.getSeconds());
+
+            if (puzzle.isSolved()) {
+                //TODO: show keyboard
+            }
+            else
+            {
+                //TODO: hide keyboard
+            }
         }
     }
 

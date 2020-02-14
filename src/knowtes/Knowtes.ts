@@ -1,7 +1,7 @@
 import { IKnowtesView } from "./IKnowtesView";
 
 export class Knowtes {
-    activeKeys = {
+    private initialActiveKeys = {
         c: false,
         d: false,
         e: false,
@@ -16,6 +16,8 @@ export class Knowtes {
         gis: false,
         ais: false
     };
+
+    private activeKeys = JSON.parse(JSON.stringify(this.initialActiveKeys));;
 
     views: IKnowtesView[] = [];
 
@@ -115,6 +117,10 @@ export class Knowtes {
         }
 
         this.updateViews();
+    }
+
+    resetNotes() {
+        this.activeKeys = JSON.parse(JSON.stringify(this.initialActiveKeys));
     }
 
     getNote(name: string): boolean {
