@@ -17,7 +17,6 @@ export class ChordsGame {
 
     constructor() {
         this.knowtes = new Knowtes();
-        this.nextPuzzle();
     }
 
     public addView(view: IChordsView) {

@@ -163,6 +163,7 @@ export class Knowtes {
     }
 
     private updateViews(): void {
+        console.log(this.views.length);
         for (let view of this.views) {
             view.update(this);
         }
