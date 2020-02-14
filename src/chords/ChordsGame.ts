@@ -56,26 +56,24 @@ export class ChordsGame {
             this.knowtes.resetNotes();
             let notes = this.puzzle.getNotes();
 
-            let prevNoteValue = 0;
             let currOctave = 0;
             for (let i = 0; i < notes.length; i++) {
                 let noteString = notes[i];
 
-                if (i != 0) {
-                    let currNoteValue = NoteValues[notes[i]];
-
-                    if (currNoteValue < prevNoteValue) {
+                if (i > 0) {
+                    if (NoteValues[notes[i]] < NoteValues[notes[i - 1]]) {
                         // make one ocatev higher
                         currOctave++;
                     }
 
+                    //append octave to string
                     if (currOctave > 0) {
                         noteString += currOctave;
                     }
                 }
 
+                //console.log(">" + noteString + "<");
                 this.knowtes.setNote(noteString, true);
-                prevNoteValue = NoteValues[notes[i]];
             }
         }
     }

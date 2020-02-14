@@ -141,7 +141,7 @@ ul, ol {
 
         display: grid;
         grid-template-rows: repeat(2, 1fr);
-        grid-template-columns: repeat(48, 1fr);
+        grid-template-columns: repeat(45, 1fr);
         
         > li {
             font-size: 0;
@@ -191,35 +191,35 @@ ul, ol {
                 grid-column-start: 19;
             }
 
-            &#key-c2 {
+            &#key-c1 {
                 grid-column-start: 22;
             }
 
-            &#key-d2 {
+            &#key-d1 {
                 grid-column-start: 25;
             }
 
-            &#key-e2 {
+            &#key-e1 {
                 grid-column-start: 28;
             }
 
-            &#key-f2 {
+            &#key-f1 {
                 grid-column-start: 31;
             }
 
-            &#key-g2 {
+            &#key-g1 {
                 grid-column-start: 34;
             }
 
-            &#key-a2 {
+            &#key-a1 {
                 grid-column-start: 37;
             }
 
-            &#key-b2 {
+            &#key-b1 {
                 grid-column-start: 40;
             }
 
-            &#key-c3 {
+            &#key-c2 {
                 border-right-width: 2px;
                 grid-column-start: 43;
             }
@@ -244,23 +244,23 @@ ul, ol {
                 grid-column-start: 18;
             }
 
-            &#key-cis2 {
+            &#key-cis1 {
                 grid-column-start:  24;
             }
 
-            &#key-dis2 {
+            &#key-dis1 {
                 grid-column-start:  27;
             }
 
-            &#key-fis2 {
+            &#key-fis1 {
                 grid-column-start: 33;
             }
 
-            &#key-gis2 {
+            &#key-gis1 {
                 grid-column-start:  36;
             }
 
-            &#key-ais2 {
+            &#key-ais1 {
                 grid-column-start: 39;
             }
 

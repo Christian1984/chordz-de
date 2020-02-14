@@ -9,12 +9,6 @@ import { KnowtesViewController } from "../knowtes/KnowtesViewController.js";
     let handDisplay = document.getElementById("chord-hand");
     let timerDisplay = document.getElementById("chord-timer");
 
-    console.log('NoteValues.a', NoteValues.a);
-    console.log('NoteValues["d"]', NoteValues["d"]);
-
-    let a = "x";
-    console.log('NoteValues["x"]', NoteValues[a]);
-
     if (
         chordsDisplay &&
         reversalDisplay &&
