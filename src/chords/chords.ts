@@ -26,7 +26,13 @@ import { KnowtesViewController } from "../knowtes/KnowtesViewController.js";
 
         if (keyboard) {
             let keyboardViewController = new KnowtesViewController(keyboard, "li");
-            game.addKnowtesView(keyboardViewController);
+            game.addKeyboardView(keyboardViewController);
+        }
+
+        let keyboardWrapper: HTMLElement | null = document.querySelector("#keyboard-wrapper");
+
+        if (keyboardWrapper) {
+            game.setKeyboardWrapper(keyboardWrapper);
         }
 
         game.nextPuzzle();

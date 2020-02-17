@@ -11,6 +11,7 @@ export class ChordsGame {
     private puzzle: ChordsPuzzle | null = null;
     //knowtes
     private knowtes: Knowtes;
+    private keyboardWrapper: HTMLElement | null = null;
     //stats
     //views
     private views: IChordsView[] = [];
@@ -24,8 +25,12 @@ export class ChordsGame {
         this.updateViews();
     }
 
-    public addKnowtesView(view: IKnowtesView) {
+    public addKeyboardView(view: IKnowtesView) {
         this.knowtes.addView(view);
+    }
+
+    public setKeyboardWrapper(node: HTMLElement) {
+        this.keyboardWrapper = node;
     }
 
     public getPuzzle() {
@@ -36,6 +41,8 @@ export class ChordsGame {
         if (this.puzzle) {
             this.puzzle.stopClock();
             this.puzzle.solve();
+
+            this.showKeyboard();
         }
     }
 
@@ -45,13 +52,27 @@ export class ChordsGame {
 
     public nextPuzzle() {
         this.puzzle = new ChordsPuzzle(this);
-        this.updateKnowtes();
+        this.updateKeyboard();
 
         this.puzzle.startClock();
         this.updateViews();
+
+        this.hideKeyboard();
     }
 
-    private updateKnowtes() {
+    private showKeyboard() {
+        if (this.keyboardWrapper) {
+            this.keyboardWrapper.classList.remove("hidden");
+        }
+    }
+
+    private hideKeyboard() {
+        if (this.keyboardWrapper) {
+            this.keyboardWrapper.classList.add("hidden");
+        }
+    }
+
+    private updateKeyboard() {
         if (this.puzzle && this.knowtes) {
             this.knowtes.resetNotes();
             let notes = this.puzzle.getNotes();
