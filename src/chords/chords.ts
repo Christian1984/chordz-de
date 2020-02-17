@@ -1,4 +1,5 @@
 import { ChordsGame } from "./ChordsGame.js";
+import { ChordsController } from "./ChordsController.js";
 import { ChordsView } from "./ChordsView.js";
 import { NoteValues } from "./ChordsEnums.js";
 import { KnowtesViewController } from "../knowtes/KnowtesViewController.js";
@@ -20,6 +21,10 @@ import { KnowtesViewController } from "../knowtes/KnowtesViewController.js";
 
         let game = new ChordsGame();
         game.addView(view);
+
+        let solveButton: HTMLElement | null = document.querySelector("#chords-buzzer");
+        let nextButton: HTMLElement | null = document.querySelector("#chords-next");
+        let controller = new ChordsController(game, solveButton, nextButton);
 
         // create keyboard view
         let keyboard: HTMLElement | null = document.querySelector("#keyboard");
