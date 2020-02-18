@@ -3,7 +3,9 @@ $color-inactive-hover: darken($color-inactive, 30%);
 $color-active: grey;
 $color-active-hover: darken($color-active, 30%);
 
-$color-main: #FF17CD;
+$color-light: #FF17CD;
+$color-medium: #BF119A;
+$color-dark: #400633;
 
 html {
     font-size: 100%;
@@ -18,6 +20,7 @@ html {
 }
 
 body {
+    color: $color-dark;
     line-height: 1;
 }
 
@@ -36,8 +39,8 @@ a {
         }
 
         text-decoration: none;
-        border: 2px solid $color-main;
-        background-color: $color-main;
+        border: 2px solid $color-light;
+        background-color: $color-light;
         color: white;
         padding: 0.5em;
     }
@@ -47,21 +50,8 @@ a {
     display: none;
 }
 
-.main-wrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-}
-
-.main-child-wrapper {
-    margin: 1em;
-}
-
 #header {
-    background-color: $color-main;
+    background-color: $color-light;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -79,17 +69,36 @@ a {
     }
 }
 
-#main {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+#main-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
 
-    > div {
-        flex-grow: 1;
+    #main {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #horizontal-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            
+            > div {
+                flex-grow: 1;
+                margin: 1em;
+            }
+        }
     }
 }
+
 
 .button {
     cursor: pointer;
@@ -194,7 +203,7 @@ a {
         > li {
             font-size: 0;
             grid-row: 1 / 3;
-            border: 2px solid black;
+            border: 2px solid $color-dark;
             grid-column-end: span 3;
 
             &.keys-white {
@@ -205,7 +214,7 @@ a {
 
             &.keys-black {
                 grid-row: 1 / 2;
-                background-color: black;
+                background-color: $color-dark;
                 z-index: 100;
                 grid-column-end: span 2;
             }
@@ -313,15 +322,15 @@ a {
             }
 
             &.active {
-                background-color: $color-active;
+                background-color: $color-light;
 
                 &:hover {
-                    background-color: $color-active-hover;
+                    background-color: $color-medium;
                 }
             }
 
             &:hover {
-                background-color: $color-inactive-hover;
+                background-color: $color-medium;
             }
         }
     }

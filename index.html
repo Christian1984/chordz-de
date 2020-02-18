@@ -17,68 +17,70 @@
     <h1>knotes Chords</h1>
     <h2>Know your Chords</h2>
     -->
-    <div class="main-wrapper">
+    <div id="main-wrapper">
         <div id="main">
-            <div class="main-child-wrapper" id="chords-puzzle-wrapper">
-                <div id="chords-puzzle">
-                    <table>
-                        <tr>
-                            <td><i class="fas fa-music"></i></td>
-                            <td id="chord-name">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fas fa-sync"></i></td>
-                            <td id="chord-reversal">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fas fa-sign-language"></i></td>
-                            <td id="chord-hand">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fas fa-hourglass-half"></i></td>
-                            <td id="chord-timer">&nbsp;</td>
-                        </tr>
-                    </table>
+            <div id="horizontal-wrapper">
+                <div class="horizontal-child" id="chords-puzzle-wrapper">
+                    <div id="chords-puzzle">
+                        <table>
+                            <tr>
+                                <td><i class="fas fa-music"></i></td>
+                                <td id="chord-name">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-sync"></i></td>
+                                <td id="chord-reversal">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-sign-language"></i></td>
+                                <td id="chord-hand">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-hourglass-half"></i></td>
+                                <td id="chord-timer">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <div id="controls">
-                    <a id="chords-buzzer" class="button" href="#"><i class="fas fa-check"></i>&nbsp;Fertig</a>
-                    <a id="chords-next" class="button" href="#">Weiter&nbsp;<i class="fas fa-fast-forward"></i></a>
+                <div class="horizontal-child hidden" id="keyboard-wrapper">
+                    <div id="keyboard">
+                        <ul>
+                            <li id="key-c" class="keys-white button" data-name="c">key-c</li>
+                            <li id="key-d" class="keys-white button" data-name="d">key-d</li>
+                            <li id="key-e" class="keys-white button" data-name="e">key-e</li>
+                            <li id="key-f" class="keys-white button" data-name="f">key-f</li>
+                            <li id="key-g" class="keys-white button" data-name="g">key-g</li>
+                            <li id="key-a" class="keys-white button" data-name="a">key-a</li>
+                            <li id="key-b" class="keys-white button" data-name="b">key-b</li>
+                            
+                            <li id="key-c1" class="keys-white button" data-name="c1">key-c1</li>
+                            <li id="key-d1" class="keys-white button" data-name="d1">key-d1</li>
+                            <li id="key-e1" class="keys-white button" data-name="e1">key-e1</li>
+                            <li id="key-f1" class="keys-white button" data-name="f1">key-f1</li>
+                            <li id="key-g1" class="keys-white button" data-name="g1">key-g1</li>
+                            <li id="key-a1" class="keys-white button" data-name="a1">key-a1</li>
+                            <li id="key-b1" class="keys-white button" data-name="b1">key-b1</li>
+    
+                            <li id="key-c2" class="keys-white button" data-name="c2">key-c2</li>
+    
+                            <li id="key-cis" class="keys-black button" data-name="cis">key-cis</li>
+                            <li id="key-dis" class="keys-black button" data-name="dis">key-dis</li>
+                            <li id="key-fis" class="keys-black button" data-name="fis">key-fis</li>
+                            <li id="key-gis" class="keys-black button" data-name="gis">key-gis</li>
+                            <li id="key-ais" class="keys-black button" data-name="ais">key-ais</li>
+    
+                            <li id="key-cis1" class="keys-black button" data-name="cis1">key-cis1</li>
+                            <li id="key-dis1" class="keys-black button" data-name="dis1">key-dis1</li>
+                            <li id="key-fis1" class="keys-black button" data-name="fis1">key-fis1</li>
+                            <li id="key-gis1" class="keys-black button" data-name="gis1">key-gis1</li>
+                            <li id="key-ais1" class="keys-black button" data-name="ais1">key-ais1</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="main-child-wrapper hidden" id="keyboard-wrapper">
-                <div id="keyboard">
-                    <ul>
-                        <li id="key-c" class="keys-white button" data-name="c">key-c</li>
-                        <li id="key-d" class="keys-white button" data-name="d">key-d</li>
-                        <li id="key-e" class="keys-white button" data-name="e">key-e</li>
-                        <li id="key-f" class="keys-white button" data-name="f">key-f</li>
-                        <li id="key-g" class="keys-white button" data-name="g">key-g</li>
-                        <li id="key-a" class="keys-white button" data-name="a">key-a</li>
-                        <li id="key-b" class="keys-white button" data-name="b">key-b</li>
-                        
-                        <li id="key-c1" class="keys-white button" data-name="c1">key-c1</li>
-                        <li id="key-d1" class="keys-white button" data-name="d1">key-d1</li>
-                        <li id="key-e1" class="keys-white button" data-name="e1">key-e1</li>
-                        <li id="key-f1" class="keys-white button" data-name="f1">key-f1</li>
-                        <li id="key-g1" class="keys-white button" data-name="g1">key-g1</li>
-                        <li id="key-a1" class="keys-white button" data-name="a1">key-a1</li>
-                        <li id="key-b1" class="keys-white button" data-name="b1">key-b1</li>
-
-                        <li id="key-c2" class="keys-white button" data-name="c2">key-c2</li>
-
-                        <li id="key-cis" class="keys-black button" data-name="cis">key-cis</li>
-                        <li id="key-dis" class="keys-black button" data-name="dis">key-dis</li>
-                        <li id="key-fis" class="keys-black button" data-name="fis">key-fis</li>
-                        <li id="key-gis" class="keys-black button" data-name="gis">key-gis</li>
-                        <li id="key-ais" class="keys-black button" data-name="ais">key-ais</li>
-
-                        <li id="key-cis1" class="keys-black button" data-name="cis1">key-cis1</li>
-                        <li id="key-dis1" class="keys-black button" data-name="dis1">key-dis1</li>
-                        <li id="key-fis1" class="keys-black button" data-name="fis1">key-fis1</li>
-                        <li id="key-gis1" class="keys-black button" data-name="gis1">key-gis1</li>
-                        <li id="key-ais1" class="keys-black button" data-name="ais1">key-ais1</li>
-                    </ul>
-                </div>
+            <div id="controls">
+                <a id="chords-buzzer" class="button" href="#"><i class="fas fa-check"></i>&nbsp;Fertig</a>
+                <a id="chords-next" class="button" href="#">Weiter&nbsp;<i class="fas fa-fast-forward"></i></a>
             </div>
         </div>
     </div>
