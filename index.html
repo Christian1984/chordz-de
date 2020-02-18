@@ -80,24 +80,126 @@
             </div>
             <div id="controls">
                 <a id="settings-button" class="button button--inverted" href="#"><i class="fas fa-cog"></i></a><!-- prevent whitespace
-                --><a id="chords-buzzer" class="button" href="#"><i class="fas fa-check"></i>&nbsp;Fertig</a><!-- prevent whitespace
+                --><a id="chords-buzzer" class="button" href="#"><i class="fas fa-check"></i>&nbsp;Lösung</a><!-- prevent whitespace
                 --><a id="chords-next" class="button hidden" href="#">Weiter&nbsp;<i class="fas fa-fast-forward"></i></a>
             </div>
         </div>
     </div>
     <div id="header">
-        <h1>chordz.de</h1>
+        <h1><i class="fas fa-graduation-cap">&nbsp;</i>chordz.de</h1>
         <div>
             <em>built with love by</em>
             <b>Christian Hoffmann</b>
         </div>
     </div>
     <div id="footer">
-        <a id="privacy" href="#">datenschutz</a>
+        <a id="privacy-button" href="#">datenschutz</a>
         &nbsp;|&nbsp;
-        <a id="imprint" href="#">impressum</a>
+        <a id="imprint-button" href="#">impressum</a>
     </div>
-    <div id="stats"></div>
+    <div id="modals-wrapper">
+        <div id="settings" class="dialog">
+            <div class="dialog-title">
+                <h2>Einstellungen</h2><h2><i class="fas fa-times"></i></h2>
+            </div>
+            <hr />
+            <div class="dialog-content">
+                <table>
+                    <tr>
+                        <th>Grundtöne</th>
+                        <th>Tonalität</th>
+                        <th>Grundton...</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="enable-note-c" name="enable-note-c" value="c">
+                            <label for="enable-note-c">&nbsp;C</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="enable-major" name="enable-major" value="major">
+                            <label for="enable-major">&nbsp;Dur</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="enable-white-keys" name="enable-white-keys" value="white-keys">
+                            <label for="enable-white-keys">&nbsp;... auf weißen Tasten</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="enable-note-d" name="enable-note-d" value="d">
+                            <label for="enable-note-d">&nbsp;D</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="enable-minor" name="enable-minor" value="minor">
+                            <label for="enable-minor">&nbsp;Moll</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="enable-black-keys" name="enable-black-keys" value="black-keys">
+                            <label for="enable-black-keys">&nbsp;... auf schwarzen Tasten</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="enable-note-e" name="enable-note-e" value="e">
+                            <label for="enable-note-e">&nbsp;E</label>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="enable-note-f" name="enable-note-f" value="f">
+                            <label for="enable-note-f">&nbsp;F</label>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="enable-note-g" name="enable-note-g" value="g">
+                            <label for="enable-note-g">&nbsp;G</label>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="enable-note-a" name="enable-note-a" value="a">
+                            <label for="enable-note-a">&nbsp;A</label>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="enable-note-b" name="enable-note-b" value="b">
+                            <label for="enable-note-b">&nbsp;B</label>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="privacy" class="dialog hidden">
+            <div class="dialog-title">
+                <h2>Datenschutzerklärung</h2><h2><i class="fas fa-times"></i></h2>
+            </div>
+            <hr />
+            <div class="dialog-content">
+                TEXT-CONTENT
+            </div>
+        </div>
+        <div id="imprint" class="dialog hidden">
+            <div class="dialog-title">
+                <h2>Impressum</h2><h2><i class="fas fa-times"></i></h2>
+            </div>
+            <hr />
+            <div class="dialog-content">
+                TEXT-CONTENT
+            </div>
+        </div>
+    </div>
     <script src ="build/chords/chords.js" type="module"></script>
 </body>
 </html>

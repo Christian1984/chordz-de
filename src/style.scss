@@ -6,6 +6,7 @@ $color-active-hover: darken($color-active, 30%);
 $color-light: #FF17CD;
 $color-medium: #BF119A;
 $color-dark: #400633;
+$color-modal-background: rgba(black, 0.85);
 
 html {
     font-size: 100%;
@@ -28,10 +29,6 @@ ul, ol {
     list-style: none;
 }
 
-#controls {
-    margin-top: 2em;
-}
-
 a {
     &.button {
         
@@ -41,26 +38,37 @@ a {
         color: white;
         padding: 0.5em;
         
+        &:hover {
+            border: 2px solid $color-medium;
+            background-color: white;
+            color: $color-medium;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
         &.button--inverted {
             border: 2px solid $color-light;
             border-right: 0;
             background-color: white;
             color: $color-light;
-        }
 
-        &:hover {
-            background-color: $color-medium;
-            color: white;
-        }
-
-        &:focus {
-            outline: none;
+            &:hover {
+                background-color: $color-dark;
+                color: white;
+                border-color: $color-dark;
+            }
         }
     }
 }
 
 .hidden {
     display: none;
+}
+
+#controls {
+    margin-top: 2em;
 }
 
 #header {
@@ -72,7 +80,7 @@ a {
 
     > h1,
     > div {
-        padding: 0.5em;
+        padding: 10px 20px;
     }
 
     > div {
@@ -104,6 +112,59 @@ a {
         }
     }
 
+}
+
+#modals-wrapper {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    background-color: $color-modal-background;
+
+    .dialog {
+        z-index: 2;
+        background-color: $color-medium;
+        color: white;
+        position: absolute;
+
+        top: 3em;
+        right: 3em;
+        left: 3em;
+        bottom: 3em;
+
+        .dialog-title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                margin: 0.35em;
+            }
+        }
+
+        &#settings {
+            .dialog-content {
+                table {
+                    font-size: large;
+                    margin: 1em auto;
+
+                    th {
+                        text-decoration: underline;
+                    }
+
+                    th, td {
+                        text-align: left;
+                        padding: 0.5em;
+                    }
+    
+                }
+            }
+        }
+    }
 }
 
 #main-wrapper {
@@ -375,6 +436,7 @@ a {
 
 #chords-puzzle {
     > table {
+        font-size: large;
         margin: 1em auto;
 
         td {
