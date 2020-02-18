@@ -25,6 +25,14 @@ ul, ol {
     list-style: none;
 }
 
+a {
+    &.button {
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
 .hidden {
     display: none;
 }
@@ -310,8 +318,13 @@ ul, ol {
 }
 
 #chords-puzzle {
-    div {
-        text-align: center;
+    > table {
+        margin: 1em auto;
+
+        td {
+            padding: 0.25em;
+            text-align: center;
+        }
     }
 }
 
