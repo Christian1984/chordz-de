@@ -34,15 +34,28 @@ ul, ol {
 
 a {
     &.button {
-        &:focus {
-            outline: none;
-        }
-
+        
         text-decoration: none;
         border: 2px solid $color-light;
         background-color: $color-light;
         color: white;
         padding: 0.5em;
+        
+        &.button--inverted {
+            border: 2px solid $color-light;
+            border-right: 0;
+            background-color: white;
+            color: $color-light;
+        }
+
+        &:hover {
+            background-color: $color-medium;
+            color: white;
+        }
+
+        &:focus {
+            outline: none;
+        }
     }
 }
 
