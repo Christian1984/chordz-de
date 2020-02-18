@@ -82,6 +82,30 @@ a {
     }
 }
 
+#footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: small;
+
+    background-color: $color-dark;
+    color: white;
+
+    padding: 0.3em;
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}
+
 #main-wrapper {
     position: absolute;
     top: 0;
