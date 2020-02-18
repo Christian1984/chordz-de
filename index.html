@@ -4,49 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="build/style.css" />
     <title>knowtes - Know your Notes</title>
 </head>
 <body>
     <!-- This should go to a title bar of some sort -->
     <!--
-    <h1>knotes</h1>
-    <h2>Know your Notes</h2>
+    <h1>knotes Chords</h1>
+    <h2>Know your Chords</h2>
     -->
-
-    <div id="stats"></div>
     <div class="main-wrapper">
         <div id="main">
-            <div class="main-child-wrapper">
-                <div id="notes">
-                    <div>
-                        <div id="notes-line-1" class="notes-line">line-1</div>
-                        <div id="notes-line-2" class="notes-line">line-2</div>
-                        <div id="notes-line-3" class="notes-line">line-3</div>
-                        <div id="notes-line-4" class="notes-line">line-4</div>
-                        <div id="notes-line-5" class="notes-line">line-5</div>
-
-                        <div id="notes-line-help" class="notes-line">line-help</div>
-
-                        <!--<div class="key trebble">key</div>
-                        <div class="note">note</div>-->
-                    </div>
+            <div class="main-child-wrapper" id="chords-puzzle-wrapper">
+                <div id="chords-puzzle">
+                    <div id="chord-name">&nbsp;</div>
+                    <div id="chord-reversal">&nbsp;</div>
+                    <div id="chord-hand">&nbsp;</div>
+                    <div id="chord-timer">&nbsp;</div>
+                </div>
+                <div id="controls">
+                    <a id="chords-buzzer" href="#">Fertig</a>
+                    <a id="chords-next" href="#">Weiter</a>
                 </div>
             </div>
-            <div class="main-child-wrapper">
-                <div id="name-buttons">
-                    <ul>
-                        <li id="names-c" class="note-button button" data-name="c">C</li>
-                        <li id="names-d" class="note-button button" data-name="d">D</li>
-                        <li id="names-e" class="note-button button" data-name="e">E</li>
-                        <li id="names-f" class="note-button button" data-name="f">F</li>
-                        <li id="names-g" class="note-button button" data-name="g">G</li>
-                        <li id="names-a" class="note-button button" data-name="a">A</li>
-                        <li id="names-b" class="note-button button" data-name="b">B</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="main-child-wrapper">
+            <div class="main-child-wrapper hidden" id="keyboard-wrapper">
                 <div id="keyboard">
                     <ul>
                         <li id="key-c" class="keys-white button" data-name="c">key-c</li>
@@ -56,18 +38,41 @@
                         <li id="key-g" class="keys-white button" data-name="g">key-g</li>
                         <li id="key-a" class="keys-white button" data-name="a">key-a</li>
                         <li id="key-b" class="keys-white button" data-name="b">key-b</li>
+                        
+                        <li id="key-c1" class="keys-white button" data-name="c1">key-c1</li>
+                        <li id="key-d1" class="keys-white button" data-name="d1">key-d1</li>
+                        <li id="key-e1" class="keys-white button" data-name="e1">key-e1</li>
+                        <li id="key-f1" class="keys-white button" data-name="f1">key-f1</li>
+                        <li id="key-g1" class="keys-white button" data-name="g1">key-g1</li>
+                        <li id="key-a1" class="keys-white button" data-name="a1">key-a1</li>
+                        <li id="key-b1" class="keys-white button" data-name="b1">key-b1</li>
+
                         <li id="key-c2" class="keys-white button" data-name="c2">key-c2</li>
-        
+
                         <li id="key-cis" class="keys-black button" data-name="cis">key-cis</li>
                         <li id="key-dis" class="keys-black button" data-name="dis">key-dis</li>
                         <li id="key-fis" class="keys-black button" data-name="fis">key-fis</li>
                         <li id="key-gis" class="keys-black button" data-name="gis">key-gis</li>
                         <li id="key-ais" class="keys-black button" data-name="ais">key-ais</li>
+
+                        <li id="key-cis1" class="keys-black button" data-name="cis1">key-cis1</li>
+                        <li id="key-dis1" class="keys-black button" data-name="dis1">key-dis1</li>
+                        <li id="key-fis1" class="keys-black button" data-name="fis1">key-fis1</li>
+                        <li id="key-gis1" class="keys-black button" data-name="gis1">key-gis1</li>
+                        <li id="key-ais1" class="keys-black button" data-name="ais1">key-ais1</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <script src ="build/knowtes/main.js" type="module"></script>
+    <div id="header">
+        <h1>chordz.de</h1>
+        <div>
+            <em>built with love by</em>
+            <b>Christian Hoffmann</b>
+        </div>
+    </div>
+    <div id="stats"></div>
+    <script src ="build/chords/chords.js" type="module"></script>
 </body>
 </html>
