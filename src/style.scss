@@ -192,18 +192,15 @@ a {
 
         &#settings {
             .dialog-content {
-                table {
-                    margin: 1em auto;
+                display: flex;
+                flex-direction: row;
 
-                    th {
-                        text-decoration: underline;
-                    }
+                > div {
+                    margin-right: 1em;
+                }
 
-                    th, td {
-                        text-align: left;
-                        padding: 0.5em;
-                    }
-    
+                h4 {
+                    margin-top: 1em;
                 }
             }
         }
@@ -522,4 +519,14 @@ a {
             }
         }
     }
-  }
+
+    #modals-wrapper {
+        .dialog {
+            &#settings {
+                .dialog-content {
+                    display: unset;
+                }
+            }
+        }
+    }
+}

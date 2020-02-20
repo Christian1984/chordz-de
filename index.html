@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div id="controls">
-                <a id="settings-button" class="button button--inverted" href="#"><i class="fas fa-cog"></i></a><!-- prevent whitespace
+                <!--<a id="settings-button" class="button button--inverted" href="#"><i class="fas fa-cog"></i></a>--><!-- prevent whitespace
                 --><a id="chords-buzzer" class="button" href="#"><i class="fas fa-check"></i>&nbsp;Lösung</a><!-- prevent whitespace
                 --><a id="chords-next" class="button hidden" href="#">Weiter&nbsp;<i class="fas fa-fast-forward"></i></a>
             </div>
@@ -106,81 +106,59 @@
             </div>
             <hr />
             <div class="dialog-content">
-                <table>
-                    <tr>
-                        <th>Grundtöne</th>
-                        <th>Tonalität</th>
-                        <th>Grundton...</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="enable-note-c" name="enable-note-c" value="c">
-                            <label for="enable-note-c">&nbsp;C</label>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="enable-major" name="enable-major" value="major">
-                            <label for="enable-major">&nbsp;Dur</label>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="enable-white-keys" name="enable-white-keys" value="white-keys">
-                            <label for="enable-white-keys">&nbsp;... auf weißen Tasten</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="enable-note-d" name="enable-note-d" value="d">
-                            <label for="enable-note-d">&nbsp;D</label>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="enable-minor" name="enable-minor" value="minor">
-                            <label for="enable-minor">&nbsp;Moll</label>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="enable-black-keys" name="enable-black-keys" value="black-keys">
-                            <label for="enable-black-keys">&nbsp;... auf schwarzen Tasten</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="enable-note-e" name="enable-note-e" value="e">
-                            <label for="enable-note-e">&nbsp;E</label>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="enable-note-f" name="enable-note-f" value="f">
-                            <label for="enable-note-f">&nbsp;F</label>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="enable-note-g" name="enable-note-g" value="g">
-                            <label for="enable-note-g">&nbsp;G</label>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="enable-note-a" name="enable-note-a" value="a">
-                            <label for="enable-note-a">&nbsp;A</label>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="enable-note-b" name="enable-note-b" value="b">
-                            <label for="enable-note-b">&nbsp;B</label>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
+                <div id="settings-basenote">
+                    <h4>Grundtöne</h4>
+                    <p>
+                        <input type="checkbox" id="enable-note-c" name="enable-note-c" value="c">
+                        <label for="enable-note-c">&nbsp;C</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="enable-note-d" name="enable-note-d" value="d">
+                        <label for="enable-note-d">&nbsp;D</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="enable-note-e" name="enable-note-e" value="e">
+                        <label for="enable-note-e">&nbsp;E</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="enable-note-f" name="enable-note-f" value="f">
+                        <label for="enable-note-f">&nbsp;F</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="enable-note-g" name="enable-note-g" value="g">
+                        <label for="enable-note-g">&nbsp;G</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="enable-note-a" name="enable-note-a" value="a">
+                        <label for="enable-note-a">&nbsp;A</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="enable-note-b" name="enable-note-b" value="b">
+                        <label for="enable-note-b">&nbsp;B</label>
+                    </p>
+                </div>
+                <div id="settings-tone">
+                    <h4>Tonalität</h4>
+                    <p>
+                        <input type="checkbox" id="enable-major" name="enable-major" value="major">
+                        <label for="enable-major">&nbsp;Dur</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="enable-minor" name="enable-minor" value="minor">
+                        <label for="enable-minor">&nbsp;Moll</label>
+                    </p>
+                </div>
+                <div id="settings-bwkeys">
+                    <h4>Grundton auf...</h4>
+                    <p>
+                        <input type="checkbox" id="enable-white-keys" name="enable-white-keys" value="white-keys">
+                        <label for="enable-white-keys">&nbsp;... weißen Tasten</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="enable-black-keys" name="enable-black-keys" value="black-keys">
+                        <label for="enable-black-keys">&nbsp;... schwarzen Tasten</label>
+                    </p>
+                </div>
             </div>
         </div>
         <div id="imprint" class="dialog hidden">
