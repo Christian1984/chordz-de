@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/e4c5cade36.js" crossorigin="anonymous"></script>
-    
-    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" crossorigin="anonymous">-->
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="build/style.css" />
-    <title>knowtes - Know your Notes</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>chordz.de</title>
 </head>
 <body>
     <!-- This should go to a title bar of some sort -->
@@ -79,7 +79,7 @@
                 </div>
             </div>
             <div id="controls">
-                <a id="settings-button" class="button button--inverted" href="#"><i class="fas fa-cog"></i></a><!-- prevent whitespace
+                <!--<a id="settings-button" class="button button--inverted" href="#"><i class="fas fa-cog"></i></a>--><!-- prevent whitespace
                 --><a id="chords-buzzer" class="button" href="#"><i class="fas fa-check"></i>&nbsp;Lösung</a><!-- prevent whitespace
                 --><a id="chords-next" class="button hidden" href="#">Weiter&nbsp;<i class="fas fa-fast-forward"></i></a>
             </div>
@@ -89,20 +89,20 @@
         <h1><i class="fas fa-graduation-cap">&nbsp;</i>chordz.de</h1>
         <div>
             <em>built with love by</em>
-            <b>Christian Hoffmann</b>
+            <b><a href="https://www.xing.com/profile/Christian_Hoffmann287/cv" target="_blank">Christian Hoffmann</a></b>
         </div>
     </div>
     <div id="footer">
-        <a id="github-button" href="https://github.com/Christian1984/knowtes" target="_blank">github</a>
+        <a id="github-button" href="https://github.com/Christian1984/chordz-de" target="_blank">github</a>
         &nbsp;|&nbsp;
         <a id="privacy-button" href="#">datenschutz</a>
         &nbsp;|&nbsp;
         <a id="imprint-button" href="#">impressum</a>
     </div>
-    <div id="modals-wrapper hidden">
+    <div id="modals-wrapper" class="hidden">
         <div id="settings" class="dialog hidden">
             <div class="dialog-title">
-                <h2>Einstellungen</h2><h2><i class="fas fa-times"></i></h2>
+                <h2>Einstellungen</h2><h2><a href="#" class="dialog-close"><i class="fas fa-times"></i></a></h2>
             </div>
             <hr />
             <div class="dialog-content">
@@ -185,23 +185,30 @@
         </div>
         <div id="privacy" class="dialog hidden">
             <div class="dialog-title">
-                <h2>Datenschutzerklärung</h2><h2><i class="fas fa-times"></i></h2>
+                <h2>Datenschutzerklärung</h2><h2><a href="#" class="dialog-close"><i class="fas fa-times"></i></a></h2>
             </div>
             <hr />
             <div class="dialog-content">
-                TEXT-CONTENT
+                <iframe src="privacy.html" seamless></iframe>
             </div>
         </div>
         <div id="imprint" class="dialog hidden">
             <div class="dialog-title">
-                <h2>Impressum</h2><h2><i class="fas fa-times"></i></h2>
+                <h2>Impressum</h2><h2><a href="#" class="dialog-close"><i class="fas fa-times"></i></a></h2>
             </div>
             <hr />
             <div class="dialog-content">
-                TEXT-CONTENT
+                <p>Angaben gem. § 5 TMG:</p>
+                <p>Christian Hoffmann</p>
+                <p>chordz.de</p>
+                <p>Heinrich-Nagel-Straße 23</p>
+                <p>50389 Wesseling</p>
+                <p>Telefon: +49 (0)151 61025732</p>
+                <p>E-Mail: info@chordz.de</p>
             </div>
         </div>
     </div>
+    <script src ="build/chords/navigation.js" type="module"></script>
     <script src ="build/chords/chords.js" type="module"></script>
 </body>
 </html>

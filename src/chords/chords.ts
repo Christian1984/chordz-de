@@ -1,7 +1,6 @@
 import { ChordsGame } from "./ChordsGame.js";
 import { ChordsController } from "./ChordsController.js";
 import { ChordsView } from "./ChordsView.js";
-import { NoteValues } from "./ChordsEnums.js";
 import { KnowtesViewController } from "../knowtes/KnowtesViewController.js";
 
 (function() {

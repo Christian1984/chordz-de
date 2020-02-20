@@ -30,8 +30,14 @@ ul, ol {
 }
 
 a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
     &.button {
-        
         text-decoration: none;
         border: 2px solid $color-light;
         background-color: $color-light;
@@ -64,7 +70,21 @@ a {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
+}
+
+.dialog-embed {
+    color: white;
+    line-height: 1.5;
+    margin: 1em;
+
+    h4, p {
+        margin-top: 1em;
+    }
+
+    a {
+        color: white;
+    }
 }
 
 #controls {
@@ -135,6 +155,13 @@ a {
         left: 3em;
         bottom: 3em;
 
+        display: flex;
+        flex-direction: column;
+
+        hr {
+            color: white;
+        }
+
         .dialog-title {
             display: flex;
             flex-direction: row;
@@ -143,13 +170,35 @@ a {
 
             h2 {
                 margin: 0.35em;
+                flex-shrink: 0;
+            }
+
+            h2:first-child {
+                flex-shrink: unset;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+        }
+
+        .dialog-content {
+            flex-grow: 1;
+            font-size: large;
+
+            p {
+                margin: 0.5em;
+            }
+
+            iframe {
+                border: none;
+                width: 100%;
+                height: 100%
             }
         }
 
         &#settings {
             .dialog-content {
                 table {
-                    font-size: large;
                     margin: 1em auto;
 
                     th {
@@ -162,6 +211,15 @@ a {
                     }
     
                 }
+            }
+        }
+
+        &#imprint {
+            .dialog-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
         }
     }
