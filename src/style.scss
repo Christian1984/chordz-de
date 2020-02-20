@@ -121,7 +121,7 @@ a {
 }
 
 #modals-wrapper {
-    z-index: 1;
+    z-index: 100;
     position: absolute;
     top: 0;
     right: 0;
@@ -131,7 +131,7 @@ a {
     background-color: $color-modal-background;
 
     .dialog {
-        z-index: 2;
+        z-index: 101;
         background-color: $color-medium;
         color: white;
         position: absolute;
@@ -367,7 +367,7 @@ a {
             &.keys-black {
                 grid-row: 1 / 2;
                 background-color: $color-dark;
-                z-index: 100;
+                z-index: 11;
                 grid-column-end: span 2;
             }
 
@@ -503,3 +503,23 @@ a {
 #controls {
     text-align: center;
 }
+
+@media (orientation: portrait) {
+    #header {
+        font-size: x-small;
+    }
+
+    #main-wrapper {
+        position: unset;
+        z-index: -1;
+    
+        #main {
+            height: 100%;
+            display: unset;
+    
+            #horizontal-wrapper {
+                display: unset;
+            }
+        }
+    }
+  }
