@@ -73,20 +73,6 @@ a {
     display: none !important;
 }
 
-.dialog-embed {
-    color: white;
-    line-height: 1.5;
-    margin: 1em;
-
-    h4, p {
-        margin-top: 1em;
-    }
-
-    a {
-        color: white;
-    }
-}
-
 #controls {
     margin-top: 2em;
 }
@@ -163,20 +149,26 @@ a {
         }
 
         .dialog-title {
+            /*
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            */
 
             h2 {
+                /*flex-shrink: 0;*/
                 margin: 0.35em;
-                flex-shrink: 0;
+                float: right;
             }
 
             h2:first-child {
+                /*
                 flex-shrink: unset;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                */
+                float: left;
             }
 
         }
@@ -184,6 +176,8 @@ a {
         .dialog-content {
             flex-grow: 1;
             font-size: large;
+            overflow: scroll;
+            padding: 1em;
 
             p {
                 margin: 0.5em;
