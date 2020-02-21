@@ -25,6 +25,7 @@ import { SettingsViewController } from "./SettingsViewController.js";
             document.querySelector("#settings-basenote-2"),
             document.querySelector("#settings-tone")
         );
+
         settings.addView(settingsViewController);
 
         // create chords view

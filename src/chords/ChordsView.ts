@@ -25,7 +25,7 @@ export class ChordsView implements IChordsView {
 
         if (puzzle)
         {
-            this.chordDisplay.textContent = this.chordToString(puzzle.getChord());
+            this.chordDisplay.textContent = puzzle.getChordName();
             this.reversalDisplay.textContent = this.reversalToString(puzzle.getReversal());
             this.handDisplay.textContent = this.handToString(puzzle.getLeftHand());
             this.timerDisplay.textContent = this.secondsToString(puzzle.getSeconds());
@@ -33,21 +33,9 @@ export class ChordsView implements IChordsView {
             if (puzzle.isSolved()) {
                 //TODO: show keyboard
             }
-            else
-            {
+            else {
                 //TODO: hide keyboard
             }
-        }
-    }
-
-    private chordToString(chord: ChordEnum): string {
-        switch (chord) {
-            case ChordEnum.C:
-                return "C";
-            case ChordEnum.F:
-                return "F";
-            case ChordEnum.G:
-                return "G";
         }
     }
 

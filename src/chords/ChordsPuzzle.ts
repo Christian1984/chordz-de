@@ -1,9 +1,10 @@
 import { ChordEnum, ChordNotes } from "./Chord.js";
 import { ChordsGame } from "./ChordsGame.js";
+import { Chord, ToneEnum } from "./Chord.js";
 import { Settings } from "./Settings.js";
 
 export class ChordsPuzzle {
-    private chord: ChordEnum;
+    private chord: Chord;
     private reversal: number;
     private leftHand: boolean;
     private seconds: number;
@@ -14,16 +15,28 @@ export class ChordsPuzzle {
     private intervalId: number = 0;
 
     constructor(game: ChordsGame, settings: Settings) {
-        //TODO: use settings here
-        this.chord = this.randomEnum(ChordEnum);
+        let activeNotes = settings.getActiveNotes();
+        let baseNote = activeNotes[Math.floor(Math.random() * activeNotes.length)];
+
+        let tone = ToneEnum.major;
+
+        if (!settings.isToneEnabled("major") && settings.isToneEnabled("minor")) {
+            tone = ToneEnum.minor;
+        }
+        else if (settings.isToneEnabled("major") && settings.isToneEnabled("minor")) {
+            tone = Math.random() < 0.5 ? ToneEnum.major : ToneEnum.minor;
+        }
+
         this.reversal = Math.floor(Math.random() * 3); //generates 0, 1 or 2
         this.leftHand = Math.random() < 0.5;
         this.seconds = 0;
 
+        this.chord = new Chord(baseNote, tone, this.reversal);
+
         this.chordsGame = game;
     }
 
-    public getChord(): ChordEnum {
+    public getChord(): Chord {
         return this.chord;
     }
 
@@ -44,16 +57,11 @@ export class ChordsPuzzle {
     }
 
     public getNotes(): string[] {
-        switch (this.chord) {
-            case ChordEnum.C:
-                return this.rotateNotes(ChordNotes.C, this.reversal);
-            case ChordEnum.F:
-                return this.rotateNotes(ChordNotes.F, this.reversal);
-            case ChordEnum.G:
-                return this.rotateNotes(ChordNotes.G, this.reversal);
-            default:
-                return [];
-        }
+        return this.chord.notes();
+    }
+
+    public getChordName(): string {
+        return this.chord.name();
     }
 
     public startClock(): void {
@@ -72,27 +80,5 @@ export class ChordsPuzzle {
     private tickClock() {
         this.seconds++;
         this.chordsGame.puzzleUpdate();
-    }
-
-    private randomEnum<T>(anEnum: T): T[keyof T] {
-        const enumValues = Object.keys(anEnum)
-            .map(n => Number.parseInt(n))
-            .filter(n => !Number.isNaN(n)) as unknown as T[keyof T][];
-        const randomIndex = Math.floor(Math.random() * enumValues.length);
-        const randomEnumValue = enumValues[randomIndex];
-        return randomEnumValue;
-    }
-
-    private rotateNotes(notes: string[], reversal: number): string[] {
-        let copy = JSON.parse(JSON.stringify(notes));
-
-        for (let i = 0; i < reversal; i++) {
-            let first = copy.shift();
-            if (first) {
-                copy.push(first);
-            }
-        }
-
-        return copy;
     }
 }

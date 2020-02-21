@@ -45,7 +45,7 @@ export class ChordsGame {
             this.puzzle.stopClock();
             this.puzzle.solve();
 
-            this.showKeyboard();
+            this.showKeyboard(); // TODO: move to chordsview
         }
     }
 
@@ -60,7 +60,7 @@ export class ChordsGame {
         this.puzzle.startClock();
         this.updateViews();
 
-        this.hideKeyboard();
+        this.hideKeyboard(); // TODO: move to chordsview
     }
 
     private showKeyboard() {

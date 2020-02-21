@@ -16,7 +16,7 @@ export class Settings {
         "dis": false,
         "fis": false,
         "gis": false,
-        "ais": true
+        "ais": false
     };
 
     private enabledTone: {[key: string]: boolean} = {
@@ -38,6 +38,11 @@ export class Settings {
 
     public isToneEnabled(tone: string) {
         return this.isEnabled(this.enabledTone, tone);
+    }
+
+    public getActiveNotes(): string[] {
+        return Object.keys(this.enabledBaseNotes)
+            .filter(key => this.enabledBaseNotes[key]);
     }
 
     // helper
