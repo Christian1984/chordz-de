@@ -1,5 +1,6 @@
 import { Chord, ChordNotes } from "./ChordsEnums.js";
 import { ChordsGame } from "./ChordsGame.js";
+import { Settings } from "./Settings.js";
 
 export class ChordsPuzzle {
     private chord: Chord;
@@ -12,7 +13,8 @@ export class ChordsPuzzle {
 
     private intervalId: number = 0;
 
-    constructor(game: ChordsGame) {
+    constructor(game: ChordsGame, settings: Settings) {
+        //TODO: use settings here
         this.chord = this.randomEnum(Chord);
         this.reversal = Math.floor(Math.random() * 3); //generates 0, 1 or 2
         this.leftHand = Math.random() < 0.5;

@@ -3,9 +3,11 @@ import { ChordsPuzzle } from "./ChordsPuzzle.js";
 import { Knowtes } from "../knowtes/Knowtes.js";
 import { NoteValues } from "./ChordsEnums.js";
 import { IKnowtesView } from "../knowtes/IKnowtesView.js";
+import { Settings } from "./Settings.js";
 
 export class ChordsGame {
     //settings
+    private settings: Settings;
     //history
     //current
     private puzzle: ChordsPuzzle | null = null;
@@ -16,7 +18,8 @@ export class ChordsGame {
     //views
     private views: IChordsView[] = [];
 
-    constructor() {
+    constructor(settings: Settings) {
+        this.settings = settings;
         this.knowtes = new Knowtes();
     }
 
@@ -51,7 +54,7 @@ export class ChordsGame {
     }
 
     public nextPuzzle() {
-        this.puzzle = new ChordsPuzzle(this);
+        this.puzzle = new ChordsPuzzle(this, settings);
         this.updateKeyboard();
 
         this.puzzle.startClock();
