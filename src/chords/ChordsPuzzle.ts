@@ -1,9 +1,9 @@
-import { Chord, ChordNotes } from "./ChordsEnums.js";
+import { ChordEnum, ChordNotes } from "./Chord.js";
 import { ChordsGame } from "./ChordsGame.js";
 import { Settings } from "./Settings.js";
 
 export class ChordsPuzzle {
-    private chord: Chord;
+    private chord: ChordEnum;
     private reversal: number;
     private leftHand: boolean;
     private seconds: number;
@@ -15,7 +15,7 @@ export class ChordsPuzzle {
 
     constructor(game: ChordsGame, settings: Settings) {
         //TODO: use settings here
-        this.chord = this.randomEnum(Chord);
+        this.chord = this.randomEnum(ChordEnum);
         this.reversal = Math.floor(Math.random() * 3); //generates 0, 1 or 2
         this.leftHand = Math.random() < 0.5;
         this.seconds = 0;
@@ -23,7 +23,7 @@ export class ChordsPuzzle {
         this.chordsGame = game;
     }
 
-    public getChord(): Chord {
+    public getChord(): ChordEnum {
         return this.chord;
     }
 
@@ -45,11 +45,11 @@ export class ChordsPuzzle {
 
     public getNotes(): string[] {
         switch (this.chord) {
-            case Chord.C:
+            case ChordEnum.C:
                 return this.rotateNotes(ChordNotes.C, this.reversal);
-            case Chord.F:
+            case ChordEnum.F:
                 return this.rotateNotes(ChordNotes.F, this.reversal);
-            case Chord.G:
+            case ChordEnum.G:
                 return this.rotateNotes(ChordNotes.G, this.reversal);
             default:
                 return [];

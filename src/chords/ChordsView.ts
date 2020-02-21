@@ -1,6 +1,6 @@
 import { IChordsView } from "./IChordsView.js";
 import { ChordsGame } from "./ChordsGame.js";
-import { Chord } from "./ChordsEnums.js";
+import { ChordEnum } from "./Chord.js";
 
 export class ChordsView implements IChordsView {
     private chordDisplay: HTMLElement;
@@ -40,13 +40,13 @@ export class ChordsView implements IChordsView {
         }
     }
 
-    private chordToString(chord: Chord): string {
+    private chordToString(chord: ChordEnum): string {
         switch (chord) {
-            case Chord.C:
+            case ChordEnum.C:
                 return "C";
-            case Chord.F:
+            case ChordEnum.F:
                 return "F";
-            case Chord.G:
+            case ChordEnum.G:
                 return "G";
         }
     }

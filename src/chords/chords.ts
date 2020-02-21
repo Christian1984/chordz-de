@@ -35,7 +35,7 @@ import { SettingsViewController } from "./SettingsViewController.js";
 
         let solveButton: HTMLElement | null = document.querySelector("#chords-buzzer");
         let nextButton: HTMLElement | null = document.querySelector("#chords-next");
-        let controller = new ChordsController(game, solveButton, nextButton);
+        new ChordsController(game, solveButton, nextButton);
 
         // create keyboard view
         let keyboard: HTMLElement | null = document.querySelector("#keyboard");

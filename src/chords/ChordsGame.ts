@@ -1,7 +1,7 @@
 import { IChordsView } from "./IChordsView.js";
 import { ChordsPuzzle } from "./ChordsPuzzle.js";
 import { Knowtes } from "../knowtes/Knowtes.js";
-import { NoteValues } from "./ChordsEnums.js";
+import { NoteValues } from "./Chord.js";
 import { IKnowtesView } from "../knowtes/IKnowtesView.js";
 import { Settings } from "./Settings.js";
 
