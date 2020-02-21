@@ -71,6 +71,7 @@ export class Settings {
         }
 
         object[key] = value;
+        this.updateView();
     }
 
     private isEnabled(object: {[key: string]: boolean}, key: string): boolean {
@@ -84,6 +85,6 @@ export class Settings {
     }
 
     private updateView() {
-        this.view?.update(this);
+        setTimeout(() => this.view?.update(), 0);
     }
 }

@@ -3,6 +3,7 @@ import { ChordsController } from "./ChordsController.js";
 import { ChordsView } from "./ChordsView.js";
 import { KnowtesViewController } from "../knowtes/KnowtesViewController.js";
 import { Settings } from "./Settings.js";
+import { SettingsViewController } from "./SettingsViewController.js";
 
 (function() {
     let chordsDisplay = document.getElementById("chord-name");
@@ -16,8 +17,16 @@ import { Settings } from "./Settings.js";
         handDisplay &&
         timerDisplay
     ) {
+        // create seetingsviewcontroller and settings
         let settings = new Settings();
-        settings.enableBaseNote("d", true);
+        let settingsViewController = new SettingsViewController(
+            settings,
+            document.querySelector("#settings-basenote"),
+            document.querySelector("#settings-tone"),
+            document.querySelector("#settings-bwkeys"),
+        );
+        settings.addView(settingsViewController);
+
         // create chords view
         let view = new ChordsView(chordsDisplay, reversalDisplay, handDisplay, timerDisplay);
 
