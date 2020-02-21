@@ -16,17 +16,12 @@ export class Settings {
         "dis": false,
         "fis": false,
         "gis": false,
-        "ais": false
+        "ais": true
     };
 
     private enabledTone: {[key: string]: boolean} = {
         "major": true,
         "minor": false
-    }
-
-    private enabledBaseKeys: {[key: string]: boolean} = {
-        "white": true,
-        "black": false
     }
 
     public enableBaseNote(note: string, enabled: boolean) {
@@ -43,14 +38,6 @@ export class Settings {
 
     public isToneEnabled(tone: string) {
         return this.isEnabled(this.enabledTone, tone);
-    }
-
-    public enableBaseKeys(keys: string, enabled: boolean) {
-        this.enable(this.enabledBaseKeys, keys, enabled);
-    }
-
-    public isBaseKeyEnabled(keys: string) {
-        return this.isEnabled(this.enabledBaseKeys, keys);
     }
 
     // helper

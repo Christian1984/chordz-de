@@ -22,8 +22,8 @@ import { SettingsViewController } from "./SettingsViewController.js";
         let settingsViewController = new SettingsViewController(
             settings,
             document.querySelector("#settings-basenote"),
-            document.querySelector("#settings-tone"),
-            document.querySelector("#settings-bwkeys"),
+            document.querySelector("#settings-basenote-2"),
+            document.querySelector("#settings-tone")
         );
         settings.addView(settingsViewController);
 

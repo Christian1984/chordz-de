@@ -526,6 +526,12 @@ a {
             &#settings {
                 .dialog-content {
                     display: unset;
+
+                    #settings-basenote-2 {
+                        h4 {
+                            display: none;
+                        }
+                    }
                 }
             }
         }
