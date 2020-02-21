@@ -24,7 +24,6 @@ export class KnowtesViewController implements IKnowtesView {
     update(model: Knowtes): void {
         if (!this.buttons) return;
 
-        console.log("update!");
         for (let button of this.buttons) {
             if (button.dataset.name) {
                 if (model.getNote(button.dataset.name)) {

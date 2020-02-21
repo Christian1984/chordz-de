@@ -25,7 +25,7 @@ export class Settings {
     }
 
     constructor() {
-        // TODO try loading from local storage
+        this.loadAll();
     }
 
     public enableBaseNote(note: string, enabled: boolean) {
@@ -68,15 +68,39 @@ export class Settings {
 
         object[key] = value;
         this.updateView();
-        this.save();
+        this.saveAll();
     }
 
     private isEnabled(object: {[key: string]: boolean}, key: string): boolean {
         return object[key] != undefined ? object[key] : false;
     }
 
-    private save() {
-        // TODO: save to local storage
+    private loadAll() {
+        this.load("settingsEnabledBadeNotes", this.enabledBaseNotes);
+        this.load("settingsEnabledTone", this.enabledTone);
+    }
+
+    private load(storageKey: string, settingsObject: {[key: string]: boolean}) {
+        const loadedString: string | null = localStorage.getItem(storageKey);
+        if (!loadedString) return;
+
+        const loaded: {[key: string]: boolean} | null = JSON.parse(loadedString);
+        if (!loaded) return;
+
+        for (const key of Object.keys(settingsObject)) {
+            if (loaded[key] !== null && loaded[key] !== undefined) {
+                settingsObject[key] = loaded[key];
+            }
+        }
+    }
+
+    private saveAll() {
+        this.save("settingsEnabledBadeNotes", this.enabledBaseNotes);
+        this.save("settingsEnabledTone", this.enabledTone);
+    }
+
+    private save(storageKey: string, settingsObject: {[key: string]: boolean}) {
+        localStorage.setItem(storageKey, JSON.stringify(settingsObject));
     }
 
     // view
