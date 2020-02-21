@@ -2,6 +2,7 @@ import { ChordsGame } from "./ChordsGame.js";
 import { ChordsController } from "./ChordsController.js";
 import { ChordsView } from "./ChordsView.js";
 import { KnowtesViewController } from "../knowtes/KnowtesViewController.js";
+import { Settings } from "./Settings.js";
 
 (function() {
     let chordsDisplay = document.getElementById("chord-name");
@@ -15,6 +16,8 @@ import { KnowtesViewController } from "../knowtes/KnowtesViewController.js";
         handDisplay &&
         timerDisplay
     ) {
+        let settings = new Settings();
+        settings.enableBaseNote("d", true);
         // create chords view
         let view = new ChordsView(chordsDisplay, reversalDisplay, handDisplay, timerDisplay);
 
