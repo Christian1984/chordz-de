@@ -54,7 +54,7 @@ export class ChordsGame {
     }
 
     public nextPuzzle() {
-        this.puzzle = new ChordsPuzzle(this, settings);
+        this.puzzle = new ChordsPuzzle(this, this.settings);
         this.updateKeyboard();
 
         this.puzzle.startClock();

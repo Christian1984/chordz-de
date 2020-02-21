@@ -30,7 +30,7 @@ import { SettingsViewController } from "./SettingsViewController.js";
         // create chords view
         let view = new ChordsView(chordsDisplay, reversalDisplay, handDisplay, timerDisplay);
 
-        let game = new ChordsGame();
+        let game = new ChordsGame(settings);
         game.addView(view);
 
         let solveButton: HTMLElement | null = document.querySelector("#chords-buzzer");
