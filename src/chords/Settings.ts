@@ -24,8 +24,12 @@ export class Settings {
         "minor": false
     }
 
+    constructor() {
+        // TODO try loading from local storage
+    }
+
     public enableBaseNote(note: string, enabled: boolean) {
-        this.enable(this.enabledBaseNotes, note, enabled);
+        this.enableAndSave(this.enabledBaseNotes, note, enabled);
     }
 
     public isBaseNoteEnabled(note: string) {
@@ -33,7 +37,7 @@ export class Settings {
     }
 
     public enableTone(tone: string, enabled: boolean) {
-        this.enable(this.enabledTone, tone, enabled);
+        this.enableAndSave(this.enabledTone, tone, enabled);
     }
 
     public isToneEnabled(tone: string) {
@@ -52,7 +56,7 @@ export class Settings {
             .filter(e => e === true).length <= 1;
     }
 
-    private enable(object: {[key: string]: boolean}, key: string, value: boolean) {
+    private enableAndSave(object: {[key: string]: boolean}, key: string, value: boolean) {
         if (object[key] == undefined) {
             return;
         }
@@ -64,10 +68,15 @@ export class Settings {
 
         object[key] = value;
         this.updateView();
+        this.save();
     }
 
     private isEnabled(object: {[key: string]: boolean}, key: string): boolean {
         return object[key] != undefined ? object[key] : false;
+    }
+
+    private save() {
+        // TODO: save to local storage
     }
 
     // view

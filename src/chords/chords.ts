@@ -54,6 +54,4 @@ import { SettingsViewController } from "./SettingsViewController.js";
 
         game.nextPuzzle();
     }
-
-    console.log("done!");
 })();
